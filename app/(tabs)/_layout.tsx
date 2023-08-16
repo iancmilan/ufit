@@ -8,7 +8,7 @@ export default function TabRoutesLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Início',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
               <Ionicons name="home" size={size} color={color} />
@@ -20,7 +20,7 @@ export default function TabRoutesLayout() {
       <Tabs.Screen
         name="community"
         options={{
-          title: 'Community',
+          title: 'Comunidade',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
               <Ionicons name="people" size={size} color={color} />
@@ -32,7 +32,7 @@ export default function TabRoutesLayout() {
       <Tabs.Screen
         name="workout"
         options={{
-          title: 'Workout',
+          title: 'Treino',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
               <Ionicons name="barbell" size={size} color={color} />
@@ -44,7 +44,7 @@ export default function TabRoutesLayout() {
       <Tabs.Screen
         name="meals"
         options={{
-          title: 'Meals',
+          title: 'Dieta',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
               <Ionicons name="restaurant" size={size} color={color} />
