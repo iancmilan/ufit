@@ -1,9 +1,9 @@
-import { router, useGlobalSearchParams } from 'expo-router'
+import { router, useLocalSearchParams } from 'expo-router'
 import { Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default function Workout() {
-  const glob = useGlobalSearchParams()
+  const params = useLocalSearchParams()
 
   function goBack() {
     router.replace('/workouts')
@@ -13,7 +13,7 @@ export default function Workout() {
     <View className="flex-1 items-center justify-center">
       <Text className="text-4xl font-bold text-gray-700">
         {' '}
-        Workout: {glob.id}
+        Workout: {params.id}
       </Text>
       <TouchableOpacity onPress={goBack}>
         <Text>voltar</Text>
