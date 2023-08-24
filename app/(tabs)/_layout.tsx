@@ -30,7 +30,7 @@ export default function TabRoutesLayout() {
         }}
       />
       <Tabs.Screen
-        name="workouts"
+        name="(stack)"
         options={{
           title: 'Treino',
           tabBarIcon: ({ size, color, focused }) =>

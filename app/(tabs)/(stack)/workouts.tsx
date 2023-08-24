@@ -1,5 +1,5 @@
 import { View } from 'react-native'
-import Workout from '../components/Workout'
+import Workout from '../../components/Workout'
 
 export default function Workouts() {
   return (

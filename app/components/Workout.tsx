@@ -10,7 +10,7 @@ interface WorkoutProps {
 
 export default function Workout({ title, desc, id }: WorkoutProps) {
   return (
-    <Link href={`/workout/${id}`} asChild>
+    <Link href={{ pathname: '/workout/[id]', params: { id, title } }} asChild>
       <TouchableOpacity className="mb-5 rounded-md bg-gray-400 px-4 py-4">
         <Text className="text-lg font-bold text-white">{title}</Text>
         <Text className="text-base text-white/40" numberOfLines={2}>
