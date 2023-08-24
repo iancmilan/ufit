@@ -4,9 +4,13 @@ import { Ionicons } from '@expo/vector-icons'
 
 export default function TabRoutesLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: true }}>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="(index)"
         options={{
           title: 'Início',
           tabBarIcon: ({ size, color, focused }) =>
@@ -18,7 +22,7 @@ export default function TabRoutesLayout() {
         }}
       />
       <Tabs.Screen
-        name="community"
+        name="(community)"
         options={{
           title: 'Comunidade',
           tabBarIcon: ({ size, color, focused }) =>
@@ -30,7 +34,7 @@ export default function TabRoutesLayout() {
         }}
       />
       <Tabs.Screen
-        name="(stack)"
+        name="(workouts)"
         options={{
           title: 'Treino',
           tabBarIcon: ({ size, color, focused }) =>
@@ -42,7 +46,7 @@ export default function TabRoutesLayout() {
         }}
       />
       <Tabs.Screen
-        name="meals"
+        name="(meals)"
         options={{
           title: 'Dieta',
           tabBarIcon: ({ size, color, focused }) =>
