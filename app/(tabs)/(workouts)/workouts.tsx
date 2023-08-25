@@ -3,7 +3,7 @@ import Workout from '../../components/Workout'
 
 export default function Workouts() {
   return (
-    <View className="flex-1 items-center px-6 py-6">
+    <View className="flex-1 items-center bg-[#11141B] px-6 py-6">
       <Workout
         id={1}
         title="Push"

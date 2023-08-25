@@ -7,6 +7,11 @@ export default function TabRoutesLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: '#2C2E33',
+          borderTopWidth: 0,
+        },
+        tabBarActiveTintColor: '#66CD7C',
       }}
     >
       <Tabs.Screen
@@ -15,7 +20,7 @@ export default function TabRoutesLayout() {
           title: 'Início',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
-              <Ionicons name="home" size={size} color={color} />
+              <Ionicons name="home" size={size} color={'#66CD7C'} />
             ) : (
               <Ionicons name="home-outline" size={size} color={color} />
             ),
@@ -27,7 +32,7 @@ export default function TabRoutesLayout() {
           title: 'Comunidade',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
-              <Ionicons name="people" size={size} color={color} />
+              <Ionicons name="people" size={size} color={'#66CD7C'} />
             ) : (
               <Ionicons name="people-outline" size={size} color={color} />
             ),
@@ -39,7 +44,7 @@ export default function TabRoutesLayout() {
           title: 'Treino',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
-              <Ionicons name="barbell" size={size} color={color} />
+              <Ionicons name="barbell" size={size} color={'#66CD7C'} />
             ) : (
               <Ionicons name="barbell-outline" size={size} color={color} />
             ),
@@ -51,7 +56,7 @@ export default function TabRoutesLayout() {
           title: 'Dieta',
           tabBarIcon: ({ size, color, focused }) =>
             focused ? (
-              <Ionicons name="restaurant" size={size} color={color} />
+              <Ionicons name="restaurant" size={size} color={'#66CD7C'} />
             ) : (
               <Ionicons name="restaurant-outline" size={size} color={color} />
             ),
