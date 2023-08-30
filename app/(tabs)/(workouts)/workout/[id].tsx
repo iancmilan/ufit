@@ -1,8 +1,7 @@
 import { Link, Stack, useLocalSearchParams, router } from 'expo-router'
-import { ScrollView, Text } from 'react-native'
+import { ScrollView, Text, TouchableOpacity } from 'react-native'
 import Exercise from '../../../components/Exercise'
 import { Ionicons } from '@expo/vector-icons'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default function Workout() {
   const params = useLocalSearchParams()
