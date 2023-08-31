@@ -4,15 +4,15 @@ import Exercise from '../../../components/Exercise'
 import { Ionicons } from '@expo/vector-icons'
 
 export default function Workout() {
-  const params = useLocalSearchParams()
+  const { id, title } = useLocalSearchParams()
 
   return (
     <>
       <Stack.Screen
         options={{
-          title: params.title as string,
+          title: title as string,
           headerRight: () => (
-            <Link href="workout/modal">
+            <Link href={{ pathname: '/workout/modal', params: { id, title } }}>
               <Text className="font-medium text-[#66CD7C]">Iniciar</Text>
             </Link>
           ),

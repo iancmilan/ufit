@@ -1,13 +1,16 @@
 import { ScrollView, Text, TouchableOpacity } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { Stack, router } from 'expo-router'
+import { Stack, router, useLocalSearchParams } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 
 export default function Modal() {
+  const { title } = useLocalSearchParams()
+
   return (
     <>
       <Stack.Screen
         options={{
+          title: title as string,
           headerRight: () => (
             <TouchableOpacity>
               <Text className="font-medium text-[#66CD7C]">Finalizar</Text>
