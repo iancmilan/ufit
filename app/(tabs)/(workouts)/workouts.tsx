@@ -9,7 +9,7 @@ interface Exercise {
 }
 
 interface Workout {
-  id: string
+  id: number
   title: string
   exercises: Exercise[]
 }
@@ -18,9 +18,13 @@ export default function Workouts() {
   const [workouts, setWorkouts] = useState<Workout[]>([])
 
   async function loadWorkouts() {
-    const response = await api.get('/workouts?_embed=exercises')
-    setWorkouts(response.data)
-    console.log(workouts)
+    try {
+      const response = await api.get('/workouts?_embed=exercises')
+      setWorkouts(response.data)
+      // console.log(JSON.stringify(workouts, null, 3))
+    } catch (err) {
+      console.log(JSON.stringify(err))
+    }
   }
 
   useEffect(() => {
@@ -30,21 +34,16 @@ export default function Workouts() {
 
   return (
     <View className="flex-1 items-center bg-[#11141B] px-6 py-6">
-      <Workout
-        id={1}
-        title="Push"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae autem cupiditate voluptatum, assumenda ullam eius, impedit amet facere ipsam temporibus soluta hic aliquam maiores blanditiis. Saepe corporis temporibus ducimus."
-      />
-      <Workout
-        id={2}
-        title="Pull"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae autem cupiditate voluptatum, assumenda ullam eius, impedit amet facere ipsam temporibus soluta hic aliquam maiores blanditiis. Saepe corporis temporibus ducimus."
-      />
-      <Workout
-        id={3}
-        title="Legs"
-        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae autem cupiditate voluptatum, assumenda ullam eius, impedit amet facere ipsam temporibus soluta hic aliquam maiores blanditiis. Saepe corporis temporibus ducimus."
-      />
+      {workouts.map((workout) => {
+        return (
+          <Workout
+            key={workout.id}
+            id={workout.id}
+            title={workout.title}
+            desc={workout.exercises.map((exercise) => exercise.name).join(', ')}
+          />
+        )
+      })}
     </View>
   )
 }
