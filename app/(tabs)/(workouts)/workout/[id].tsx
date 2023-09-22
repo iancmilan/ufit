@@ -5,12 +5,21 @@ import { Ionicons } from '@expo/vector-icons'
 import { useEffect, useState } from 'react'
 import { api } from '../../../services/api'
 
+interface Set {
+  set: number
+  kg: number
+  reps: number
+  time: number
+}
+
 interface Exercise {
   id: number
   name: string
   imgUrl: string
   muscleGroupId: number
   workoutId: number
+  exerciseTypeId: number
+  sets: Set[]
 }
 
 interface Workout {
