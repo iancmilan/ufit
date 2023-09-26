@@ -1,5 +1,10 @@
 import { Link, Stack, useLocalSearchParams, router } from 'expo-router'
-import { ScrollView, Text, TouchableOpacity } from 'react-native'
+import {
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+} from 'react-native'
 import Exercise from '../../../components/Exercise'
 import { Ionicons } from '@expo/vector-icons'
 import { useEffect, useState } from 'react'
@@ -31,15 +36,18 @@ interface Workout {
 
 export default function Workout() {
   const { id, title } = useLocalSearchParams()
-
+  const [isLoading, setIsLoading] = useState(true)
   const [workout, setWorkout] = useState<Workout | null>(null)
 
   async function loadWorkout() {
     try {
+      setIsLoading(true)
       const response = await api.get(`/workouts/${id}?_embed=exercises`)
       setWorkout(response.data)
     } catch (err) {
       console.log(JSON.stringify(err))
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -73,6 +81,7 @@ export default function Workout() {
         showsVerticalScrollIndicator={false}
         className="flex-1 bg-[#11141B] px-4 py-4"
       >
+        {isLoading && <ActivityIndicator size="large" color="#66CD7C" />}
         {workout &&
           workout.exercises.map((exercise) => {
             return <Exercise key={exercise.id} {...exercise} />
