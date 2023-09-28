@@ -55,8 +55,8 @@ export default function Exercise(exercise: Exercise) {
   )
 
   return (
-    <View className="mb-8 rounded-md bg-[#2C2E33]">
-      <View className="mb-2 mt-3 flex-row items-center justify-center">
+    <View className="mb-8 rounded-md border border-[#2C2E33] bg-[#2C2E33]">
+      <View className="mb-2 mt-3 flex-row items-center justify-start p-2">
         <Image
           source={{
             uri: exercise.imgUrl,
