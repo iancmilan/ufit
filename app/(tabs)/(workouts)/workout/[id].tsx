@@ -1,7 +1,12 @@
-import { Link, Stack, useLocalSearchParams, router } from 'expo-router'
+import {
+  // Link,
+  Stack,
+  useLocalSearchParams,
+  router,
+} from 'expo-router'
 import {
   ScrollView,
-  Text,
+  // Text,
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native'
@@ -61,11 +66,16 @@ export default function Workout() {
       <Stack.Screen
         options={{
           title: title as string,
-          headerRight: () => (
-            <Link href={{ pathname: '/workout/modal', params: { id, title } }}>
-              <Text className="font-medium text-[#66CD7C]">Iniciar</Text>
-            </Link>
-          ),
+          // headerRight: () => (
+          //   <Link
+          //     href={{
+          //       pathname: '/workout/workoutModal',
+          //       params: { id, title },
+          //     }}
+          //   >
+          //     <Text className="font-medium text-[#66CD7C]">Iniciar</Text>
+          //   </Link>
+          // ),
           headerLeft: () => (
             <TouchableOpacity onPress={() => router.back()}>
               <Ionicons

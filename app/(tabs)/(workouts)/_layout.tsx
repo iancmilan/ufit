@@ -11,7 +11,7 @@ export default function WorkoutsLayout() {
     >
       <Stack.Screen name="workouts" options={{ title: 'Treino' }} />
       <Stack.Screen
-        name="workout/modal"
+        name="workout/workoutModal"
         options={{ presentation: 'fullScreenModal', title: 'Treino' }}
       />
     </Stack>

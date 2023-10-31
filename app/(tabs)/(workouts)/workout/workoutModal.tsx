@@ -29,12 +29,6 @@ export default function Modal() {
       />
       <ScrollView className="flex-1 bg-[#11141B] px-4 py-4">
         <StatusBar style="light" />
-        <TouchableOpacity
-          onPress={() => router.back()}
-          className="rounded-md bg-[#66CD7C] p-3"
-        >
-          <Text className="font-bold text-[#fefefe]">Voltar</Text>
-        </TouchableOpacity>
       </ScrollView>
     </>
   )
